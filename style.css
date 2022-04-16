@@ -12,6 +12,15 @@ h1{
 button{
   padding: 10px;
   border-radius: 10px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  width: 104px;
+}
+
+.show{
+  display: block;
 }
 
 #gameButtonArea > button{
@@ -71,6 +80,21 @@ button{
 }
 
 #button6:active, #button6.lit{
-  background: #800080;
+  background: #800080; 
+  /* background: url( 'https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/harp.png?v=1650142271272' );
+  height: 134px;  
+  width: 104px; */
 }
 
+
+.close-image img {
+    height: 200px;  
+    width: 200px;
+  
+}
+
+#close-CSS {
+    background-size: 100px 130px;
+    height: 134px;  
+    width: 104px;
+}

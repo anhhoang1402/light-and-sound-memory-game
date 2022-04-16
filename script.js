@@ -110,9 +110,11 @@ o.start(0);
 
 function lightButton(btn) {
   document.getElementById("button" + btn).classList.add("lit");
+  document.getElementById("pic" + btn).classList.remove("hidden");
 }
 function clearButton(btn) {
   document.getElementById("button" + btn).classList.remove("lit");
+  document.getElementById("pic" + btn).classList.add("hidden");
 }
 
 function playSingleClue(btn) {
@@ -166,6 +168,7 @@ function loseGame() {
 
   }
   else {
+      alert(`You have ${mistake} tries left`);
       document.getElementById("mistakes").innerHTML = `You have ${mistake} tries left`;
       playClueSequence();
   }
@@ -182,7 +185,10 @@ function winGame() {
 
 function guess(btn) {
   //console.log("user guessed: " + btn);
-  if (!gamePlaying) {
+  lightButton(btn);
+  playTone(btn);
+  setTimeout(clearButton, 200, btn);
+  if (!gamePlaying) {    
     return;
   }
 
