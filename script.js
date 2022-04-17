@@ -128,11 +128,16 @@ function playSingleClue(btn) {
 
 
 
-function updateCountdown(){ 
-  const minutes = Math.floor(time/60);
-  let seconds = time % 60;
-  countdown.innerHTML = `Time left: ${minutes}: ${seconds}`;
-  time--; 
+function updateCountdown(){
+  if(time == 0) {
+    loseGame();
+  } else {
+     const minutes = Math.floor(time/60);
+     let seconds = time % 60;
+     countdown.innerHTML = `Time left: ${minutes}: ${seconds}`;
+     time--; 
+  }
+ 
 }
 
 function playClueSequence() {
@@ -141,7 +146,7 @@ function playClueSequence() {
   for (let i = 0; i <= progress; i++) {
     // for each clue that is revealed so far
     setTimeout(playSingleClue, delay, pattern[i]); // set a timeout to play that clue
-    clueHoldTime = clueHoldTime - 25;
+    clueHoldTime = clueHoldTime - 10;
     delay += clueHoldTime;
     delay += cluePauseTime;
   }
