@@ -25,7 +25,7 @@ var mistake = 3;
 var interval;
 var timer;
 
-let startingMin = 1;
+let startingMin = 1/3;
 let time = startingMin * 60;
 const countdown = document.getElementById("time");
 
@@ -45,6 +45,8 @@ function startGame() {
   //intialize game variables
   progress = 0;
   gamePlaying = true;
+  startingMin = 1/3;
+  time = startingMin * 60;
   mistake = 3;
   pattern = patternRandomize();
   document.getElementById("startBtn").classList.add("hidden");
@@ -56,7 +58,7 @@ function stopGame() {
   //intialize game variables
   gamePlaying = false;
   clearInterval(interval)
-  countdown.innerHTML = `Time left: 1:00`;
+  countdown.innerHTML = `Time left: 20 seconds`;
   document.getElementById("mistakes").innerHTML = `You have 3 tries left`;
   //swap the start and stop buttons
   document.getElementById("startBtn").classList.remove("hidden");
@@ -65,12 +67,12 @@ function stopGame() {
 
 // Sound Synthesis Functions
 const freqMap = {
-  1: 261.6,
-  2: 329.6,
-  3: 392,
-  4: 466.2,
-  5: 520,
-  6: 620,
+  1: 300,
+  2: 420,
+  3: 500,
+  4: 600.2,
+  5: 700,
+  6: 810,
 };
 
 function playTone(btn, len) {
@@ -130,11 +132,12 @@ function playSingleClue(btn) {
 
 function updateCountdown(){
   if(time == 0) {
+    mistake--;
     loseGame();
   } else {
      const minutes = Math.floor(time/60);
      let seconds = time % 60;
-     countdown.innerHTML = `Time left: ${minutes}: ${seconds}`;
+     countdown.innerHTML = `Time left: ${seconds} seconds`;
      time--; 
   }
  
@@ -152,23 +155,18 @@ function playClueSequence() {
   }
   
   interval = setInterval(updateCountdown, 1000);
-  
-
-
-  
-  
 }
 
 function loseGame() {
   clearInterval(interval)
-  startingMin = 1;
+  startingMin = 1/3;
   time = startingMin * 60;
   if (mistake == 0) {
     stopGame();
     document.getElementById("mistakes").innerHTML = `You have 3 tries left`;
     alert("Game Over. You lost.");
     clearInterval(interval)
-    countdown.innerHTML = `Time left: 1:00`;
+    countdown.innerHTML = `Time left: 20 seconds`;
 
 
   }
@@ -182,7 +180,7 @@ function loseGame() {
 
 function winGame() {
   clearInterval(interval)
-  startingMin = 1;
+  startingMin = 1/3;
   time = startingMin * 60;
   stopGame();
   alert("Game Over. You won!");
@@ -202,12 +200,12 @@ function guess(btn) {
     if (guessCounter == progress) {
       if (progress == pattern.length - 1) {
         clearInterval(interval)
-        startingMin = 1;
+        startingMin = 1/3;
         time = startingMin * 60;
         winGame();
       } else {
         clearInterval(interval)
-        startingMin = 1;
+        startingMin = 1/3;
         time = startingMin * 60;
         progress++;
         playClueSequence();

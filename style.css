@@ -1,12 +1,15 @@
 body{
-  background-color: slategrey;
+  
+  
+  background: #42275a; 
+  background: linear-gradient(to right, #42275a, #734b6d); 
   color: white;
-  font-family: verdana, arial, sans-serif;
+  font-family: 'Playfair Display', arial, sans-serif;
   margin: 2em;
 }
 
 h1{
-  font-family: verdana, arial, sans-serif;
+  font-family: 'Playfair Display', arial, sans-serif;
 }
 
 button{
@@ -17,6 +20,8 @@ button{
   margin: 0;
   vertical-align: top;
   width: 104px;
+  background-color: #2C3E50;
+  color: white;
 }
 
 .show{
@@ -26,7 +31,10 @@ button{
 #gameButtonArea > button{
   width: 200px;
   height: 200px;
-  margin: 2px;
+  margin: 4px;
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
 }
 
 .hidden{
@@ -88,8 +96,8 @@ button{
 
 
 .close-image img {
-    height: 200px;  
-    width: 200px;
+    height: 150px;  
+    width: 150px;
   
 }
 

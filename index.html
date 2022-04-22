@@ -17,7 +17,9 @@
       crossorigin="anonymous"
     />
     
-    <link rel="stylesheet" href="style.css" type="text/css">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
 
     <!-- 
       This is an HTML comment
@@ -60,17 +62,14 @@
 
         <h2>Welcome to the game!</h2>
         <p>
-          Repeat the patterns played for you. For each turn, you have 1 minute to complete the sequence. The pattern is played increasingly fast as the game goes on.
+          Repeat the patterns played for you. For each turn, you have 20 seconds
+          to complete the sequence. The pattern is played increasingly fast as
+          the game goes on.
         </p>
-        
-        <p id = "mistakes">
-        You have 3 tries left.
-        </p>
-        
-        <p id = "time">
-        Time left: 1:00
-        </p>
-        
+
+        <p id="mistakes">You have 3 tries left.</p>
+
+        <p id="time">Time left: 20 seconds</p>
 
         <button id="startBtn" onclick="startGame()">Start</button>
 
@@ -82,9 +81,13 @@
             onclick="guess(1)"
             onmousedown="startTone(1)"
             onmouseup="stopTone()"
-            class = "close-image" 
-            >
-            <img id = "pic1" class = "hidden" src="https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/guitar.png?v=1650142395830"/>
+            class="close-image"
+          >
+            <img
+              id="pic1"
+              class="hidden"
+              src="https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/guitar.png?v=1650142395830"
+            />
           </button>
 
           <button
@@ -92,9 +95,13 @@
             onclick="guess(2)"
             onmousedown="startTone(2)"
             onmouseup="stopTone()"
-            class = "close-image"
+            class="close-image"
           >
-            <img id = "pic2" class = "hidden" src = "https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/violin.gif?v=1650142124075"/>
+            <img
+              id="pic2"
+              class="hidden"
+              src="https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/violin.gif?v=1650142124075"
+            />
           </button>
 
           <button
@@ -102,9 +109,13 @@
             onclick="guess(3)"
             onmousedown="startTone(3)"
             onmouseup="stopTone()"
-            class = "close-image"
+            class="close-image"
           >
-            <image id = "pic3" class = "hidden" src = "https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/harp.png?v=1650142271272"/>
+            <image
+              id="pic3"
+              class="hidden"
+              src="https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/harp.png?v=1650142271272"
+            />
           </button>
 
           <button
@@ -112,39 +123,48 @@
             onclick="guess(4)"
             onmousedown="startTone(4)"
             onmouseup="stopTone()"
-            class = "close-image"
+            class="close-image"
           >
-            <image id = "pic4" class = "hidden" src = "https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/piano.png?v=1650142510185"/>
-            
+            <image
+              id="pic4"
+              class="hidden"
+              src="https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/piano.png?v=1650142510185"
+            />
           </button>
-          
+
           <button
             id="button5"
             onclick="guess(5)"
             onmousedown="startTone(5)"
             onmouseup="stopTone()"
-            class = "close-image"
+            class="close-image"
           >
-            <image id = "pic5" class = "hidden" src = "https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/drum.png?v=1650142717058"/>
+            <image
+              id="pic5"
+              class="hidden"
+              src="https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/drum.png?v=1650142717058"
+            />
           </button>
-          
+
           <button
             id="button6"
             onclick="guess(6)"
             onmousedown="startTone(6)"
             onmouseup="stopTone()"
-            class = "close-image"
+            class="close-image"
           >
-            <image id = "pic6" class = "hidden" src = "https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/violin.png?v=1650142517553"/>
+            <image
+              id="pic6"
+              class="hidden"
+              src="https://cdn.glitch.global/1b5837a2-f78d-4ae7-991b-ad8ac112679a/violin.png?v=1650142517553"
+            />
           </button>
-          
-          
         </div>
       </div>
     </div>
     <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
     <footer class="footer"></footer>
-    
+
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
